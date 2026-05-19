@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TikTok подключён — Божественный Контент</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 20px;
+      padding: 48px 40px;
+      max-width: 480px;
+      width: 90%;
+      text-align: center;
+    }
+    .icon { font-size: 64px; margin-bottom: 20px; }
+    h1 { font-size: 26px; font-weight: 700; margin-bottom: 12px; }
+    p { color: #888; font-size: 15px; line-height: 1.6; margin-bottom: 8px; }
+    .code-box {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 14px;
+      margin: 24px 0;
+      font-family: monospace;
+      font-size: 12px;
+      color: #0f0;
+      word-break: break-all;
+      text-align: left;
+    }
+    .btn {
+      display: inline-block;
+      background: #fff;
+      color: #000;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 50px;
+      text-decoration: none;
+      margin-top: 8px;
+    }
+    .error { color: #ff4444; }
+  </style>
+</head>
+<body>
+<div class="card" id="content">
+  <div class="icon">⏳</div>
+  <h1>Обработка...</h1>
+  <p>Получаем код авторизации</p>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const code  = params.get('code');
+const state = params.get('state');
+const error = params.get('error');
+const el    = document.getElementById('content');
+
+if (error || !code) {
+  el.innerHTML = `
+    <div class="icon">❌</div>
+    <h1 class="error">Ошибка авторизации</h1>
+    <p>${error || 'Код не получен'}</p>
+    <a class="btn" href="/tiktok/">Попробовать снова</a>`;
+} else {
+  const savedState = sessionStorage.getItem('tt_state');
+  const verifier   = sessionStorage.getItem('tt_verifier');
+
+  if (state !== savedState) {
+    el.innerHTML = `
+      <div class="icon">⚠️</div>
+      <h1 class="error">Неверный state</h1>
+      <p>Попробуйте заново</p>
+      <a class="btn" href="/tiktok/">Назад</a>`;
+  } else {
+    el.innerHTML = `
+      <div class="icon">✅</div>
+      <h1>TikTok подключён!</h1>
+      <p>Авторизация прошла успешно.</p>
+      <p style="margin-top:8px">Получен код авторизации:</p>
+      <div class="code-box">code = ...${code.slice(-30)}</div>
+      <p>Теперь бот может публиковать видео в ваш TikTok-аккаунт в виде черновиков.</p>
+      <a class="btn" href="/">На главную</a>`;
+  }
+}
+</script>
+</body>
+</html>
