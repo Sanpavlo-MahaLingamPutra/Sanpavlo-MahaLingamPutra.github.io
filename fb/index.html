@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Facebook авторизация — Bozhestvenny Kontent</title>
+<style>
+  body { font-family: -apple-system, sans-serif; background: #f0f2f5; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+  .card { background: #fff; border-radius: 12px; padding: 32px; max-width: 480px; width: 90%; box-shadow: 0 2px 12px rgba(0,0,0,.1); text-align: center; }
+  .icon { font-size: 48px; margin-bottom: 16px; }
+  h1 { font-size: 20px; margin: 0 0 8px; color: #1c1e21; }
+  p { color: #606770; font-size: 14px; margin: 0 0 24px; }
+  .code-box { background: #f0f2f5; border-radius: 8px; padding: 16px; font-family: monospace; font-size: 13px; word-break: break-all; color: #1c1e21; margin-bottom: 16px; text-align: left; border: 1px solid #ddd; }
+  .copy-btn { background: #1877f2; color: #fff; border: none; border-radius: 8px; padding: 12px 24px; font-size: 15px; cursor: pointer; width: 100%; }
+  .copy-btn:active { background: #145dbf; }
+  .success { color: #42b72a; font-size: 14px; margin-top: 12px; display: none; }
+  .error { background: #fff3cd; border: 1px solid #ffc107; border-radius: 8px; padding: 16px; color: #856404; }
+</style>
+</head>
+<body>
+<div class="card" id="app">
+  <div class="icon">🔐</div>
+  <h1>Авторизация Facebook</h1>
+  <p id="subtitle">Получаем код авторизации...</p>
+  <div id="content"></div>
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const code = params.get('code');
+  const error = params.get('error');
+  const subtitle = document.getElementById('subtitle');
+  const content = document.getElementById('content');
+
+  if (error) {
+    subtitle.textContent = 'Ошибка авторизации';
+    content.innerHTML = '<div class="error">❌ ' + (params.get('error_description') || error) + '</div>';
+  } else if (code) {
+    subtitle.textContent = 'Скопируй код и отправь боту @bk_pro_bot';
+    content.innerHTML = `
+      <div class="code-box" id="codeBox">${code}</div>
+      <button class="copy-btn" onclick="copyCode()">📋 Скопировать код</button>
+      <div class="success" id="ok">✅ Скопировано! Вставь в бот командой /fb_code &lt;код&gt;</div>
+    `;
+  } else {
+    subtitle.textContent = 'Нет кода авторизации';
+    content.innerHTML = '<div class="error">❌ Код не получен. Попробуй снова через /fb_auth в боте.</div>';
+  }
+
+  function copyCode() {
+    const code = document.getElementById('codeBox').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      document.getElementById('ok').style.display = 'block';
+    });
+  }
+</script>
+</body>
+</html>
