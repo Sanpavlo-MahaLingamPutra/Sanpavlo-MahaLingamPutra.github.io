@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Психологические практики · Александр Павлов</title>
+  <meta name="description" content="Медитативные психологические практики: принятие родителей, прощение себя, работа с чакрами. Гипнотерапевт Александр Павлов.">
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --bg:#0d0d1a;
+      --card:#16162a;
+      --accent:#7c5cbf;
+      --accent2:#b07de8;
+      --gold:#e8c96a;
+      --text:#e8e4f0;
+      --muted:#8b87a8;
+      --border:#2a2a45;
+      --radius:16px;
+    }
+    body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh;padding:0 0 60px}
+
+    /* Hero */
+    .hero{
+      background:linear-gradient(160deg,#1a0d35 0%,#0d1a2e 60%,#0d0d1a 100%);
+      text-align:center;padding:48px 20px 36px;
+      border-bottom:1px solid var(--border);
+    }
+    .hero-emoji{font-size:48px;margin-bottom:12px;display:block}
+    .hero h1{font-size:clamp(22px,5vw,32px);font-weight:700;letter-spacing:-0.5px;margin-bottom:10px;
+      background:linear-gradient(135deg,#fff 30%,var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+    .hero p{color:var(--muted);font-size:15px;max-width:420px;margin:0 auto;line-height:1.6}
+    .hero-author{margin-top:16px;font-size:13px;color:var(--muted)}
+    .hero-author a{color:var(--accent2);text-decoration:none}
+
+    /* Back button */
+    .back-btn{
+      display:inline-flex;align-items:center;gap:8px;margin:20px auto 0;
+      background:rgba(124,92,191,0.15);border:1px solid var(--border);border-radius:50px;
+      padding:10px 22px;color:var(--accent2);text-decoration:none;font-size:14px;
+      transition:background 0.2s;
+    }
+    .back-btn:hover{background:rgba(124,92,191,0.3)}
+
+    /* Section */
+    .section{max-width:680px;margin:36px auto 0;padding:0 16px}
+    .section-title{
+      font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;
+      color:var(--muted);margin-bottom:16px;padding-left:4px;
+    }
+    .section-title span{color:var(--accent2)}
+
+    /* Cards */
+    .cards{display:flex;flex-direction:column;gap:12px}
+    .card{
+      background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+      padding:18px 20px;text-decoration:none;color:var(--text);
+      display:flex;align-items:center;gap:16px;
+      transition:transform 0.15s,border-color 0.15s,box-shadow 0.15s;
+    }
+    .card:hover{transform:translateY(-2px);border-color:var(--accent);box-shadow:0 8px 32px rgba(124,92,191,0.15)}
+    .card-icon{font-size:32px;flex-shrink:0;width:44px;text-align:center}
+    .card-body{flex:1;min-width:0}
+    .card-title{font-size:16px;font-weight:600;margin-bottom:4px}
+    .card-desc{font-size:13px;color:var(--muted);line-height:1.5}
+    .card-badge{
+      font-size:11px;padding:3px 10px;border-radius:50px;
+      background:rgba(124,92,191,0.15);color:var(--accent2);
+      border:1px solid rgba(124,92,191,0.3);flex-shrink:0;white-space:nowrap;
+    }
+    .card-badge.gold{background:rgba(232,201,106,0.12);color:var(--gold);border-color:rgba(232,201,106,0.3)}
+    .card-badge.soon{background:rgba(139,135,168,0.1);color:var(--muted);border-color:var(--border)}
+
+    /* Divider */
+    .divider{height:1px;background:var(--border);max-width:680px;margin:32px auto 0}
+
+    /* Footer */
+    .footer{text-align:center;padding:40px 20px 0;color:var(--muted);font-size:13px;line-height:1.8}
+    .footer a{color:var(--accent2);text-decoration:none}
+
+    /* Tag filter pills */
+    .filter-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+    .pill{
+      font-size:12px;padding:6px 14px;border-radius:50px;cursor:pointer;border:1px solid var(--border);
+      color:var(--muted);background:transparent;transition:all 0.15s;
+    }
+    .pill.active,.pill:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+    @media(max-width:400px){
+      .card{padding:14px 14px}
+      .card-badge{display:none}
+    }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hero-emoji">🧘</span>
+  <h1>Психологические практики</h1>
+  <p>Медитативные психологические практики для глубокой работы с собой, родителями и внутренними состояниями</p>
+  <div class="hero-author">
+    Гипнотерапевт, трансперсональный психолог — <a href="https://t.me/godlykontent_astro_bot" target="_blank">@АрхиКодиус</a>
+  </div>
+  <a href="https://t.me/godlykontent_astro_bot" class="back-btn">← Вернуться в бот</a>
+</div>
+
+<!-- === РАБОТА С РОДОМ === -->
+<div class="section">
+  <div class="section-title">🫂 <span>Работа с родом</span> — принятие и прощение</div>
+  <div class="cards">
+
+    <a href="https://www.youtube.com/@bozhestvennyykontent" class="card" target="_blank">
+      <div class="card-icon">💗</div>
+      <div class="card-body">
+        <div class="card-title">Мама, прости меня</div>
+        <div class="card-desc">Практика прощения и принятия мамы. Исцеляем обиды, отпускаем вину, открываем сердце</div>
+      </div>
+      <span class="card-badge gold">~18 мин</span>
+    </a>
+
+    <a href="https://www.youtube.com/@bozhestvennyykontent" class="card" target="_blank">
+      <div class="card-icon">💙</div>
+      <div class="card-body">
+        <div class="card-title">Папа, прости меня</div>
+        <div class="card-desc">Принятие отца — освобождаем силу, которую заблокировали невысказанные обиды и боль</div>
+      </div>
+      <span class="card-badge gold">~18 мин</span>
+    </a>
+
+    <a href="https://www.youtube.com/@bozhestvennyykontent" class="card" target="_blank">
+      <div class="card-icon">🤍</div>
+      <div class="card-body">
+        <div class="card-title">Прости себя</div>
+        <div class="card-desc">Самопрощение — внутренний ребёнок, принятие себя по возрастам. Замыкает арку прощения</div>
+      </div>
+      <span class="card-badge gold">~18 мин</span>
+    </a>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- === ЧАКРЫ === -->
+<div class="section" style="margin-top:28px">
+  <div class="section-title">🌀 <span>Практики по центрам силы</span> — чакры</div>
+  <div class="cards">
+
+    <a href="https://www.youtube.com/watch?v=BXLf91Y8ssY" class="card" target="_blank">
+      <div class="card-icon">🔴</div>
+      <div class="card-body">
+        <div class="card-title">Муладхара — Земля</div>
+        <div class="card-desc">Опора, безопасность, тело, род. Слияние с Землёй: выпусти корни, наполни и заземлись</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=RafzSETZuLU" class="card" target="_blank">
+      <div class="card-icon">🟠</div>
+      <div class="card-body">
+        <div class="card-title">Свадхистана — Вода</div>
+        <div class="card-desc">Творчество, чувственность, принятие тела. Убираем стыд, открываем радость и вдохновение</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=nDZPam3UbeY" class="card" target="_blank">
+      <div class="card-icon">🟡</div>
+      <div class="card-body">
+        <div class="card-title">Манипура — Огонь</div>
+        <div class="card-desc">Воля, самооценка, прощение прошлого. Разжигаем внутренний огонь, укрепляем волю</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=1Ij6lk4MjSw" class="card" target="_blank">
+      <div class="card-icon">🟢</div>
+      <div class="card-body">
+        <div class="card-title">Анахата — Воздух</div>
+        <div class="card-desc">Любовь, принятие, Средний Путь. Открываем сердце, учимся любить и добро, и зло в мире</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=kiW1_OQY6xU" class="card" target="_blank">
+      <div class="card-icon">🟦</div>
+      <div class="card-body">
+        <div class="card-title">Вишудха — Звук</div>
+        <div class="card-desc">Правда, голос, высказанность. Разгружаем несказанное — тайны и молчание блокируют нас</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=j7erkwoYXeQ" class="card" target="_blank">
+      <div class="card-icon">🔵</div>
+      <div class="card-body">
+        <div class="card-title">Аджна — Интуиция</div>
+        <div class="card-desc">Доверие интуиции, снятие ограничивающих убеждений, работа с мыслеформами и страхами</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+    <a href="https://www.youtube.com/watch?v=nA03Ugb78d0" class="card" target="_blank">
+      <div class="card-icon">🟣</div>
+      <div class="card-body">
+        <div class="card-title">Сахасрара — Связь с Высшим</div>
+        <div class="card-desc">Смысл, связь с Творцом, открытие верхней подключки. Почувствуй Бога в себе</div>
+      </div>
+      <span class="card-badge">YouTube</span>
+    </a>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- === СКОРО === -->
+<div class="section" style="margin-top:28px">
+  <div class="section-title">⏳ <span>Готовится</span> — скоро</div>
+  <div class="cards">
+
+    <div class="card" style="opacity:0.6;cursor:default">
+      <div class="card-icon">💚</div>
+      <div class="card-body">
+        <div class="card-title">Принятие себя</div>
+        <div class="card-desc">Работа с внутренним ребёнком — любовь к себе по возрастам, снятие самокритики</div>
+      </div>
+      <span class="card-badge soon">Скоро</span>
+    </div>
+
+    <div class="card" style="opacity:0.6;cursor:default">
+      <div class="card-icon">☀️</div>
+      <div class="card-body">
+        <div class="card-title">Утренняя практика любви</div>
+        <div class="card-desc">Безусловная любовь ко всем существам — ежедневная утренняя настройка</div>
+      </div>
+      <span class="card-badge soon">Скоро</span>
+    </div>
+
+    <div class="card" style="opacity:0.6;cursor:default">
+      <div class="card-icon">💎</div>
+      <div class="card-body">
+        <div class="card-title">Полный курс — от нуля до Самадхи</div>
+        <div class="card-desc">Системная работа по 7 чакрам с нуля до состояния Самадхи — единство с Творцом</div>
+      </div>
+      <span class="card-badge soon">В разработке</span>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <p>Практики ведёт Александр Павлов — гипнотерапевт, трансперсональный психолог</p>
+  <p style="margin-top:8px">
+    <a href="https://t.me/godlykontent_astro_bot" target="_blank">→ АрхиКодиус в Telegram</a>
+    &nbsp;·&nbsp;
+    <a href="https://www.youtube.com/@bozhestvennyykontent" target="_blank">YouTube канал</a>
+    &nbsp;·&nbsp;
+    <a href="https://godlykontent.ru" target="_blank">Главная</a>
+  </p>
+  <p style="margin-top:16px;font-size:11px;color:#4a4760">
+    © 2026 ИП Павлов А.А. &nbsp;·&nbsp;
+    <a href="https://godlykontent.ru/privacy-policy/" style="color:#4a4760">Политика конфиденциальности</a>
+  </p>
+</div>
+
+</body>
+</html>
