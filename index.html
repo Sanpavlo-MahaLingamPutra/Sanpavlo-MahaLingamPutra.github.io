@@ -2,11 +2,56 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="refresh" content="0; url=https://godlykontent.tb.ru/sanpavlo">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
-  <title>Александр Павлов — Гипнотерапевт</title>
+  <title>Александр Павлов</title>
+  <style>
+    body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+         background:#f4f1ec;color:#2c2c34;margin:0;padding:24px;
+         display:flex;align-items:center;justify-content:center;min-height:90vh}
+    .card{max-width:560px;width:100%;background:#fff;border-radius:18px;
+          padding:28px 24px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+    h2{margin:0 0 6px;font-size:20px}
+    p{color:#5a5a66;font-size:15px;line-height:1.5;margin:8px 0}
+    textarea{width:100%;box-sizing:border-box;height:90px;font-size:12px;
+             font-family:ui-monospace,Menlo,monospace;padding:10px;
+             border:1px solid #d9d4cb;border-radius:10px;resize:none;margin:10px 0;background:#faf8f4}
+    .btn{display:block;width:100%;box-sizing:border-box;text-align:center;
+         padding:14px;border-radius:12px;font-size:16px;font-weight:600;
+         border:none;cursor:pointer;margin:8px 0;text-decoration:none}
+    .copy{background:#6c5ce7;color:#fff}
+    .copy:active{background:#5a4bd1}
+    .tg{background:#229ED9;color:#fff}
+    .ok{color:#16a34a;font-weight:700}
+  </style>
 </head>
 <body>
-  <script>window.location.replace("https://godlykontent.tb.ru/sanpavlo");</script>
+  <div class="card" id="card">
+    <p>Загрузка…</p>
+  </div>
+  <script>
+    var params = new URLSearchParams(location.search);
+    var code = params.get("code");
+    var card = document.getElementById("card");
+    if (!code) {
+      // обычный заход без кода — редирект на сайт
+      location.replace("https://godlykontent.tb.ru/sanpavlo");
+    } else {
+      var fullUrl = location.href;
+      card.innerHTML =
+        '<h2><span class="ok">✅</span> Код авторизации получен</h2>' +
+        '<p>Скопируй текст ниже и вставь в чат боту <b>@bk_pro_bot</b> — он сам сохранит токен.</p>' +
+        '<textarea id="u" readonly>' + fullUrl + '</textarea>' +
+        '<button class="btn copy" id="cp">📋 Скопировать</button>' +
+        '<a class="btn tg" href="https://t.me/bk_pro_bot">💬 Открыть бота →</a>';
+      var ta = document.getElementById("u");
+      document.getElementById("cp").onclick = function(){
+        ta.select(); ta.setSelectionRange(0,99999);
+        var done=function(){ this.textContent="✅ Скопировано — вставь боту"; }.bind(this);
+        if (navigator.clipboard) { navigator.clipboard.writeText(fullUrl).then(done, function(){document.execCommand("copy");done();}); }
+        else { document.execCommand("copy"); done(); }
+      };
+    }
+  </script>
 </body>
 </html>
